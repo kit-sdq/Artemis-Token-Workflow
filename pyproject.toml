@@ -9,6 +9,7 @@ packages = [{include = "artemis_token_workflow"}]
 [tool.poetry.dependencies]
 python = "^3.10"
 Django = "^4.1"
+artemis-client = {git = "https://github.com/kit-sdq/artemis_client", rev = "main"}
 
 
 [build-system]
