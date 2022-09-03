@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "artemis_token_workflow"
+version = "0.1.0"
+description = ""
+authors = ["Lucas Alber <lucasd.alber@gmail.com>"]
+readme = "README.md"
+packages = [{include = "artemis_token_workflow"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+Django = "^4.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
