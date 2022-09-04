@@ -1,5 +1,4 @@
 import json
-import logging
 from typing import Any, List, Optional
 
 
@@ -9,7 +8,7 @@ class ConfigLoader:
         Supply a list of configuration files.
         List items at the front take precedence over later list items.
         """
-        logging.info(f"Using config files {paths}")
+        print(f"Using config files {paths}")
 
         self._configs = []
         for path in paths:
