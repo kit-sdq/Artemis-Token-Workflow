@@ -20,6 +20,6 @@ from django.shortcuts import redirect
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("v1/flow/", include('app.urls')),
+    path("v1/login/", include('app.urls')),
     path("", lambda _: redirect(settings.ARTEMIS_SERVER_URL))
 ]

@@ -22,7 +22,9 @@ if os.environ.get("DJANGO_CONFIG", "").lower() == "dev":
 else:
     config_file = "prod"
 
-config = ConfigLoader([f"{BASE_DIR}/config/{config_file}.json", f"{BASE_DIR}/config/base.json"])
+config = ConfigLoader(
+    [BASE_DIR / "config" / f"{config_file}.json", BASE_DIR / "config" / "base.json"]
+)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/

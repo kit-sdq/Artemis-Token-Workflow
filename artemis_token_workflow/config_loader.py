@@ -1,9 +1,10 @@
 import json
+from pathlib import Path
 from typing import Any, List, Optional
 
 
 class ConfigLoader:
-    def __init__(self, paths: List[str]):
+    def __init__(self, paths: List[Path]):
         """
         Supply a list of configuration files.
         List items at the front take precedence over later list items.
