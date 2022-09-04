@@ -14,9 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.core.management import settings
 from django.urls import include, path
+from django.shortcuts import redirect
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", include('app.urls')),
+    path("v1/flow/", include('app.urls')),
+    path("", lambda _: redirect(settings.ARTEMIS_SERVER_URL))
 ]

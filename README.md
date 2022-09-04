@@ -2,11 +2,11 @@
 
 Provides a login flow for applications that is analogous to Nextcloud [login flow v2](https://docs.nextcloud.com/server/latest/developer_manual/client_apis/LoginFlow/index.html#login-flow-v2).
 
-1. The application does an anonymous POST at `/flow/init`. The endpoint returns a JSON object that follows the interface `FlowInitResponse`:
+1. The application does an anonymous POST at `v1/flow/init`. The endpoint returns a JSON object that follows the interface `FlowInitResponse`:
 ```typescript
 interface PollingEndpoint {
-    endpoint: string;
     token: string;
+    endpoint: string;
 }
 
 interface FlowInitResponse {
