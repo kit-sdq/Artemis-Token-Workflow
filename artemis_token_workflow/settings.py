@@ -11,26 +11,27 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+from .config_loader import ConfigLoader
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# ARTEMIS settings
-ARTEMIS_URL = ""
-ARTEMIS_USER = ""
-ARTEMIS_PASSWORD = ""
+if os.environ.get("DJANGO_CONFIG", "").lower() == "dev":
+    config_file = "dev"
+else:
+    config_file = "prod"
+
+config = ConfigLoader([f"config/{config_file}.json", "config/base.json"])
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure--&@6a!-ke8wauqj^$+gqiq)=^_w)gnfjl1q(o=-()h%w2mdti8"
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+SECRET_KEY = config["django.secret-key"]
+DEBUG = config["django.debug"]
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -126,3 +127,8 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# Application specific config
+ARTEMIS_SERVER_URL = config["artemis.server"]
+ARTEMIS_USER = config["artemis.user"]
+ARTEMIS_PASSWORD = config["artemis.password"]

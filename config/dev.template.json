@@ -1,0 +1,12 @@
+{
+  "$schema": "./config.schema.json",
+  "django": {
+    "debug": true,
+    "secret-key": "django-insecure--&@6a!-ke8wauqj^$+gqiq)=^_w)gnfjl1q(o=-()h%w2mdti8"
+  },
+  "artemis": {
+    "server": "",
+    "user": "",
+    "password": ""
+  }
+}

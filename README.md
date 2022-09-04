@@ -24,6 +24,12 @@ interface FlowSuccessResponse {
 }
 ```
 
+## Configuration
+Rename the `.json.template` files in the `config` folder to `.json` and enter your settings according to the preconfigured schema.
+The application first searches configuration in the dev/prod files depending on the `DJANGO_CONFIG` environment variable (default is `PROD`), then the base file at `base.json` is checked.
+
+Never change `base.json`.
+
 ## Development
 
 Set up your python environment using Poetry.
@@ -41,5 +47,7 @@ poetry run python manage.py migrate
 # Create admin account
 poetry run python manage.py createsuperuser
 
+# Select development configuration (production is default or PROD)
+export DJANGO_CONFIG=DEV
 poetry run python manage.py runserver
 ```

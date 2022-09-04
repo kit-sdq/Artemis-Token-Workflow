@@ -1,0 +1,11 @@
+{
+  "$schema": "./config.schema.json",
+  "django": {
+    "secret-key": ""
+  },
+  "artemis": {
+    "server": "",
+    "user": "",
+    "password": ""
+  }
+}

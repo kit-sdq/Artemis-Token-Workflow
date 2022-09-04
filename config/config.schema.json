@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Application Config",
+  "type": "object",
+  "properties": {
+    "django": {
+      "type": "object",
+      "properties": {
+        "debug": {
+          "type": "boolean",
+          "default": false,
+          "description": "Enables debug output on console and web interface. Never change this to true in a production environment."
+        },
+        "secret-key": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Key can be generated at https://djecrety.ir/ for example."
+        }
+      },
+      "required": [
+        "secret-key"
+      ]
+    },
+    "artemis": {
+      "type": "object",
+      "properties": {
+        "server": {
+          "type": "string",
+          "description": "The URL to the Artemis server."
+        },
+        "user": {
+          "type": "string",
+          "description": "An API user with privileges that allow changing user data"
+        },
+        "password": {
+          "type": "string",
+          "description": "Password for the API user."
+        }
+      },
+      "required": [
+        "server",
+        "user",
+        "password"
+      ]
+    }
+  },
+  "required": [
+    "django",
+    "artemis"
+  ]
+}

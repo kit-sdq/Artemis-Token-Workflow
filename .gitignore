@@ -8,3 +8,8 @@ db.sqlite3
 
 # Python
 **/__pycache__
+
+# Config
+config/*.json
+!config/base.json
+!config/*.template.json
