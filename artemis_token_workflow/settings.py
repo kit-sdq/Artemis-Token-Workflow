@@ -22,7 +22,7 @@ if os.environ.get("DJANGO_CONFIG", "").lower() == "dev":
 else:
     config_file = "prod"
 
-config = ConfigLoader([f"config/{config_file}.json", "config/base.json"])
+config = ConfigLoader([f"{BASE_DIR}/config/{config_file}.json", f"{BASE_DIR}/config/base.json"])
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -82,7 +82,7 @@ WSGI_APPLICATION = "artemis_token_workflow.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "NAME": BASE_DIR / "data" / "db.sqlite3",
     }
 }
 
