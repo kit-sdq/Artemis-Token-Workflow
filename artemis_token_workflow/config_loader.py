@@ -24,8 +24,6 @@ class ConfigLoader:
             if part not in current:
                 return None
             current = current[part]
-        if isinstance(current, dict):
-            return None
         return current
 
     def get(self, key: str) -> str:
