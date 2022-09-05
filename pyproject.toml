@@ -10,6 +10,7 @@ packages = [{include = "artemis_token_workflow"}]
 python = "^3.10"
 Django = "^4.1"
 artemis-client = {git = "https://github.com/kit-sdq/artemis_client", rev = "main"}
+djangosaml2 = "^1.5.1"
 
 
 [build-system]

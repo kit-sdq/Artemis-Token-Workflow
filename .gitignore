@@ -13,3 +13,5 @@ db.sqlite3
 config/*.json
 !config/base.json
 !config/*.template.json
+
+data/

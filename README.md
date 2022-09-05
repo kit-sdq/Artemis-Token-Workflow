@@ -24,6 +24,11 @@ interface FlowSuccessResponse {
 }
 ```
 
+## Installation
+
+Prerequisites:
+- xmlsec (Path to `xmlsec1` can be adjusted in the config)
+
 ## Configuration
 Rename the `.json.template` files in the `config` folder to `.json` and enter your settings according to the preconfigured schema.
 The application first searches configuration in the dev/prod files depending on the `DJANGO_CONFIG` environment variable (default is `PROD`), then the base file at `base.json` is checked.
